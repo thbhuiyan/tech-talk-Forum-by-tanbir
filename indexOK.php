@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <title>Welcome to Tech-discuss Forums</title>
+    <title>Welcome to Tech-talk Discussion Forums</title>
 </head>
 
 <body>
@@ -18,9 +18,25 @@
     ?>
 
     <div class="container my-4">
-        <h1>Hello, world!</h1>
-    </div>
+        <h2 class="text-center">techtalk - categories!</h2>
 
+        <div class="row">
+
+
+<!-- Using a for loop to iterate through categories -->
+             <div class="col-md-4 ">
+                <div class="card" style="width: 18rem;">
+                    <!-- https://source.unsplash.com/720x0/?nature,water -->
+                  <img src="https://source.unsplash.com/720x0/?code,python" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-success">Explore the threads</a>
+                  </div>
+                </div>
+            </div>
+
+    </div>
 
     <?php
     include 'partials/_footer.php';

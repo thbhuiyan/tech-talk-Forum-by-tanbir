@@ -1,6 +1,6 @@
 
     <?php
-    echo '    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    echo '    <nav class="navbar navbar-expand-lg navbar-light text-dark bg-light">
     <a class="navbar-brand" href="#"><img src="./images/techtalk.png" height="52px" width="64px" alt="logo of tecktalk">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
