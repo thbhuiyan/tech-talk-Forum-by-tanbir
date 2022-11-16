@@ -1,5 +1,9 @@
-<div class="container-fluid bg-dark text-light my-4">
-    <p class="text-center mb-0">
-        Copyright tDiscuss Coding Forums 2022 | All rights reserved
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="container-fluid bg-dark text-light footer">
+    <p class="text-center mb-0 ">
+        © 2022 THB Developer | All Rights Reserved.
     </p>
 </div>
