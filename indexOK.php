@@ -59,7 +59,7 @@
 
             <?php
             $sql = "SELECT * FROM `categories`";
-            $fireq = mysqli_query($con, $sql);
+            $fireq = mysqli_query($connect, $sql);
             while ($row = mysqli_fetch_assoc($fireq)) {
                 $catid = $row['category_id'];
                 $catName = $row['category_name'];
@@ -69,9 +69,14 @@
                                 <!-- https://source.unsplash.com/360x360/?nature,water -->
                                 <img src="https://source.unsplash.com/720x480/?code,' . $catName . '" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="thread_list.php?category_id=' . $catid . '">' . $catName . '</a></h5>
+                                
+                                    <h5 class="card-title">
+                                    <a href="thread_list.php?category_id=' . $catid . '&category_name=' . $catName . '">"' . $catName . '</a>
+                                    </h5>
+
                                     <p class="card-text" maxlength="30">' . $desc . '...</p>
-                                    <a href="thread_list.php?category_id=' . $catid . '" class="btn btn-success">Explore the threads</a>
+                                    
+                                    <a href="thread_list.php?category_id=' . $catid . '&category_name=' . $catName . ' " class="btn btn-success">Explore the threads</a>
                                 </div>
                             </div>
                         </div>

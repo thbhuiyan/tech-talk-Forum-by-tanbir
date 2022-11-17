@@ -17,21 +17,24 @@
     <?php
     include 'partials/_header.php';
     include 'partials/_db.php';
-    $id = $_GET['category_id'];
-    $sql = "Select * from categories where category_id = $id ";
-    $fireq = mysqli_query($connect, $sql);
 
+    $id = $_GET['category_id'];
+    $name = $_GET['category_name'];
+    $sql = "SELECT * FROM `thread` WHERE thread_catid = $id";
+
+    $fireq = mysqli_query($connect, $sql);
     while ($row = mysqli_fetch_assoc($fireq)) {
-        $catName = $row['category_name'];
-        $catDesc = $row['category_description'];
+        $tid = $row['thread_id'];
+        $tName = $row['thread_name'];
+        $tDesc = $row['thread_desc'];
     }
     ?>
 
     <!-- Category container starts here -->
     <div class="container my-4">
         <div class="jumbotron">
-            <h1 class="display-4">Welcome to <?php echo $catName ?> Forums!</h1>
-            <p class="lead"> <?php echo $catDesc ?> </p>
+            <h1 class="display-4">Welcome to <?php echo $name ?> Forums!</h1>
+            <p class="lead"> <?php echo $tDesc ?> </p>
             <hr class="my-4">
             <p>This is a peer to peer forum for sharing knowledge with each other and to share experiences and build
                 common
@@ -41,38 +44,24 @@
                 Stay on topic. Self promote is not allowed in the forum.
                 Share your knowledge.
                 Refrain from demeaning, discriminatory, or harassing behavior and speech.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
         </div>
     </div>
+
+
     <div class="container">
         <h1 class="py-2">Browse Questions</h1>
-        <div class="media my-3">
+
+        <?php
+        echo '<div class="media my-3">
             <img src="images/user.png" width="36px" class="mr-3" alt="...">
             <div class="media-body">
-                <h5 class="mt-0">Unable to install pyCharm!</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                fringilla. Donec lacinia congue felis in faucibus.
+                <h5 class="mt-0"><a class="text-dark" href="thread.php">' . $tName . '</a>!</h5><br>
+                <p>' . $tDesc . '
+                <p>
             </div>
-        </div>
-        <div class="media my-3">
-            <img src="images/user.png" width="36px" class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Unable to install pyCharm!</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-        </div>
-        <div class="media my-3">
-            <img src="images/user.png" width="36px" class="mr-3" alt="...">
-            <div class="media-body">
-                <h5 class="mt-0">Unable to install pyCharm!</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-                odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-        </div>
+        </div>';
+        ?>
     </div>
 
     <?php
